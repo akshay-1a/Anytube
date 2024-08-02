@@ -9,6 +9,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -22,7 +23,7 @@ export default function Navbar() {
                 href="/"
                 prefetch={true}
               >
-                The <span className="font-bold text-blue-500">OCTULUS</span>
+                <Image href="./anytube.jpg"/><span className="font-bold text-orange-500">ANYTUBE</span>
               </Link>
             </div>
 
