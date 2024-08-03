@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,16 +15,28 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <>
-      <header className="bg-black text-white sticky inset-0 z-20 w-full border-b md:border-white bg-inherit">
+      <motion.header
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="bg-black text-white sticky inset-0 z-20 w-full border-b md:border-white bg-inherit"
+      >
         <div className="mx-auto max-w-screen px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
               <Link
-                className="block text-white-600 text-3xl w-fit border-b border-transparent transition duration-300 ease-in-out"
+                className="text-white-600 text-3xl w-10 h-9 
+                flex transition duration-300 ease-in-out"
                 href="/"
                 prefetch={true}
               >
-                <Image href="./anytube.jpg"/><span className="font-bold text-orange-500">ANYTUBE</span>
+                <Image
+                  src="/anytube.png"
+                  height={400}
+                  width={400}
+                  className="object-contain h-10 w-10 img"
+                />
+                <span className="font-bold grad font-calistoga ">ANYTUBE</span>
               </Link>
             </div>
 
@@ -132,7 +145,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
     </>
   );
 }

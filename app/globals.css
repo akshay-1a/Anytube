@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+
 @layer utilities {
   @layer responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */
@@ -44,4 +47,26 @@ body {
 
 .stomp {
   animation: stomp 2s ease-in-out 0.1s;
+}
+
+.grad{
+  /* background-color: red; */
+  /* background: linear-gradient(90deg, #A13625 0%, #CF3478 30%, #04FEFC 70%, #0F0096 100%); */
+  background-image: url("/anytube.jpg");
+  background-size: contain;
+  background-clip: text;
+  background-blend-mode: darken;
+  color:transparent;
+  -webkit-text-stroke: 1px rgb(255 183 77 / 70);
+  transform-style: preserve-3d;
+  filter: drop-shadow(1px 1px 1px white) drop-shadow(1px 1px 10px #555);
+  /* -webkit-background-clip: text; */
+  /* font-family: "Calistoga", serif;
+  font-weight: 400;
+  font-style: normal; */
+}
+
+.img{
+  filter: drop-shadow(1px 1px 7px rgb(255 183 77));
+  filter: blur(70%);
 }

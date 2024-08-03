@@ -3,6 +3,7 @@
 import {
   useState
 } from "react";
+import { motion } from 'framer-motion';
 import GridMovies from "../../components/GridMovies";
 
 export default function Client({ movies }: { movies: any }) {
@@ -24,7 +25,11 @@ export default function Client({ movies }: { movies: any }) {
     : movies;
 
   return (
-    <div className="bg-black text-white flex flex-col gap-10 p-5">
+    <motion.div
+      initial={{ opacity: 0, y: 500 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 1 }}
+      className="bg-black text-white flex flex-col gap-10 p-5">
       <h1 className="text-4xl font-bold">Movies</h1>
       {/* Filters */}
       <div className="flex flex-col gap-5">
@@ -166,6 +171,6 @@ export default function Client({ movies }: { movies: any }) {
         </div>
         <GridMovies data={filteredMovies} />
       </div>
-    </div>
+    </motion.div>
   );
 }

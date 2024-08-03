@@ -5,6 +5,7 @@ const Slider = React.lazy(() => import("../../../components/SliderTvShow"));
 import Link from "next/link";
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Client({ data }) {
   const [selectedSeason, setSelectedSeason] = useState(1);
@@ -13,7 +14,12 @@ export default function Client({ data }) {
   // console.log(data);
 
   return (
-    <div className="mb-10">
+    <motion.div
+      initial={{ opacity: 0, y: 500 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 1 }}
+      className="mb-10"
+    >
       {/* Fullscreen for data */}
       <Dialog
         open={isOpen}
@@ -49,11 +55,14 @@ export default function Client({ data }) {
                 </svg>
               </button>
               <button
-              // next
+                // next
                 className="absolute right-0 py-6 md:py-12 px-2 bg-white opacity-30 hover:opacity-100"
                 onClick={() => {
                   const currentSeason = data.seasons[selectedSeason - 1];
-                  if (selectedSeason < data.seasons.length || selectedEpisode < currentSeason.episode_count) {
+                  if (
+                    selectedSeason < data.seasons.length ||
+                    selectedEpisode < currentSeason.episode_count
+                  ) {
                     if (selectedEpisode < currentSeason.episode_count) {
                       setSelectedEpisode(selectedEpisode + 1);
                     } else {
@@ -79,7 +88,7 @@ export default function Client({ data }) {
                 </svg>
               </button>
               <button
-              // previous
+                // previous
                 className="absolute left-0 py-6 md:py-12 px-2 bg-white opacity-30 hover:opacity-100"
                 onClick={() => {
                   if (selectedSeason > 1 || selectedEpisode > 1) {
@@ -87,7 +96,9 @@ export default function Client({ data }) {
                       setSelectedEpisode(selectedEpisode - 1);
                     } else {
                       setSelectedSeason(selectedSeason - 1);
-                      setSelectedEpisode(data.seasons[selectedSeason - 2].episode_count);
+                      setSelectedEpisode(
+                        data.seasons[selectedSeason - 2].episode_count
+                      );
                     }
                   }
                 }}
@@ -252,7 +263,9 @@ export default function Client({ data }) {
                 {/* @ts-ignore */}
                 {[...Array(data.seasons[selectedSeason - 1].episode_count)].map(
                   (_, index) => (
-                    <option key={index} value={index + 1}>Episode {index + 1}</option>
+                    <option key={index} value={index + 1}>
+                      Episode {index + 1}
+                    </option>
                   )
                 )}
               </select>
@@ -420,6 +433,6 @@ export default function Client({ data }) {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

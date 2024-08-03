@@ -7,9 +7,14 @@ const config: Config = withMT({
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./styles/globals.css",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        calistoga: ["Calistoga", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 });

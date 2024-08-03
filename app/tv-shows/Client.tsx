@@ -3,6 +3,7 @@
 import {
   useState
 } from "react";
+import { motion } from 'framer-motion';
 import GridTvShows from '../../components/GridTvShows';
 
 export default function Client({ movies, data1 }: { movies: any, data1: any }) {
@@ -18,14 +19,18 @@ export default function Client({ movies, data1 }: { movies: any, data1: any }) {
 
   const filteredMovies = selectedGenre
     ? movies.filter((movie: { genre_ids: string | never[] }) =>
-        movie.genre_ids.includes(selectedGenre)
-      )
+      movie.genre_ids.includes(selectedGenre)
+    )
     : movies;
 
   // console.log(movies);
-  
+
   return (
-    <div className="bg-black text-white flex flex-col gap-10 p-5">
+    <motion.div
+      initial={{ opacity: 0, y: 500 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 1 }}
+      className="bg-black text-white flex flex-col gap-10 p-5">
       <h1 className="text-4xl font-bold">TV Shows</h1>
       {/* Filters */}
       <div className="flex flex-col gap-5">
@@ -167,6 +172,6 @@ export default function Client({ movies, data1 }: { movies: any, data1: any }) {
         </div>
         <GridTvShows data={filteredMovies} />
       </div>
-    </div>
+    </motion.div>
   );
 }
