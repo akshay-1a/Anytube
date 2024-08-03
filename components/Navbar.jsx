@@ -14,7 +14,7 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <>
-      <header className="bg-black text-white sticky inset-0 z-50 w-full border-b md:border-white bg-inherit">
+      <header className="bg-black text-white sticky inset-0 z-20 w-full border-b md:border-white bg-inherit">
         <div className="mx-auto max-w-screen px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
