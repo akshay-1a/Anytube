@@ -36,7 +36,7 @@ export default function Navbar() {
                   width={400}
                   className="object-contain h-10 w-10 img"
                 />
-                <span className="font-bold grad font-calistoga ">ANYTUBE</span>
+                <span className="grad archivo">ANYTUBE</span>
               </Link>
             </div>
 
@@ -45,7 +45,7 @@ export default function Navbar() {
                 <ul className="flex items-center gap-6 text-lg">
                   <li>
                     <Link
-                      className="text-white-600 transition hover:text-orange-300"
+                      className="text-white-600 eff transition hover:text-orange-300"
                       href="/"
                       prefetch={true}
                     >

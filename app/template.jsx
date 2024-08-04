@@ -22,7 +22,7 @@ const transitionVariants = {
 
 export default function Template({children}) {
   return (
-    <div>
+    <>
       <AnimatePresence>
         <motion.div
           className="fixed top-0 w-screen h-screen z-50 bg-black/90"
@@ -33,7 +33,7 @@ export default function Template({children}) {
               display: "none",
             },
           }}
-          transition={{ duration: 1.2, delay: 0.6 }}
+          transition={{ duration: 2.5 }}
         >
           <div className="flex flex-col justify-center items-center h-screen">
             <motion.img
@@ -64,8 +64,8 @@ export default function Template({children}) {
                   display: "none",
                 },
               }}
-              transition={{ duration: 0.8, ease: "circInOut" }}
-              className="relative grad text-6xl uppercase"
+              transition={{ duration: 1.4, ease: "circInOut" }}
+              className="relative grad text-6xl uppercase font-calistoga bg-black"
             >
               {" "}
               Anytube
@@ -74,6 +74,6 @@ export default function Template({children}) {
         </motion.div>
       </AnimatePresence>
       {children}
-    </div>
+    </>
   );
 }

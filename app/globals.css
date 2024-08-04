@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 
 @layer utilities {
@@ -36,6 +37,14 @@ body {
   box-sizing: border-box;
 }
 
+.archivo {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+
 @keyframes stomp {
   0% {
     transform: scale(1);
@@ -49,24 +58,37 @@ body {
   animation: stomp 2s ease-in-out 0.1s;
 }
 
-.grad{
+.grad {
   /* background-color: red; */
   /* background: linear-gradient(90deg, #A13625 0%, #CF3478 30%, #04FEFC 70%, #0F0096 100%); */
   background-image: url("/anytube.jpg");
   background-size: contain;
   background-clip: text;
   background-blend-mode: darken;
-  color:transparent;
+  color: transparent;
   -webkit-text-stroke: 1px rgb(255 183 77 / 70);
   transform-style: preserve-3d;
-  filter: drop-shadow(1px 1px 1px white) drop-shadow(1px 1px 10px #555);
+  filter: drop-shadow(1px 1px 1px rgb(255 183 77)) drop-shadow(1px 1px 10px #555);
   /* -webkit-background-clip: text; */
   /* font-family: "Calistoga", serif;
   font-weight: 400;
   font-style: normal; */
 }
 
-.img{
+.img {
   filter: drop-shadow(1px 1px 7px rgb(255 183 77));
   filter: blur(70%);
+}
+
+.eff {
+  animation-name: effect3d;
+}
+@keyframes effect3d {
+  to {
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+      0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+      0 20px 20px rgba(0, 0, 0, 0.15);
+  }
 }
